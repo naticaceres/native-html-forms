@@ -1,0 +1,50 @@
+<dialog #dlg (close)="handleClose($event)">
+  <form method="dialog" name="myForm">
+    <label
+      ><span>Favorite animal:</span>
+      <select name="favAnimal">
+        <option value="default">Choose...</option>
+        <option>Brine shrimp</option>
+        <option>Red panda</option>
+        <option>Spider monkey</option>
+      </select>
+    </label>
+    <fieldset>
+      <legend>Name</legend>
+      <label
+        ><span>First:</span>
+        <input type="text" name="name.first" />
+      </label>
+      <label
+        ><span>Last:</span>
+        <input type="text" name="name.last" />
+      </label>
+    </fieldset>
+    <div>
+      <button value="reset">Cancel</button>
+      <button value="submit">Confirm</button>
+    </div>
+  </form>
+</dialog>
+<p>
+  <button (click)="dlg['showModal']()">Update details</button>
+</p>
+<output></output>
+<style>
+   dialog::backdrop {
+     background-color: #3a1b3f6b;
+     /** unset default filter */
+    backdrop-filter: unset;
+  }
+    button {
+        margin:.5rem;
+      }
+      label {
+        display:flex;
+        margin-bottom:10px;
+      }
+      label span{
+        width:10rem;
+      }
+</style>
+
